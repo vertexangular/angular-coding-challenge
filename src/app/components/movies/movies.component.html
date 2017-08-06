@@ -1,6 +1,12 @@
 <div class="row">
     <div *ngFor="let movie of movies" class="col-3 text-center">
-        {{movie.title}}
-        <img src='{{imagePath}}/{{movie.poster_path}}' class="img-fluid"/>
+        <div class="image_content">
+            <img src='{{imagePath}}/{{movie.poster_path}}' class="rounded"/>
+        </div>
+        <div class="movie-title">{{movie.title}}</div>        
+        <div class="row">
+            <div class="col-md-6 text-left text-muted">{{movie.genre}}</div>
+            <div class="col-md-6 text-right text-muted">{{movie.length}} min</div>
+        </div>
     </div>
 </div>
