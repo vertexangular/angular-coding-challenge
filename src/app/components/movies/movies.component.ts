@@ -34,11 +34,6 @@ export class MoviesComponent implements OnInit {
                                 "rating": data.vote_average / 2
                             }]);
                             console.log(this.movieDetails, 'moviedetilas/')
-                            //this.genres.push(data.genres.map(genre => genre.name))
-                            //this.lenghts.push(data.runtime);
-
-
-                            //console.log(this.lenghts, 'data..')
                         })
                 }))
             })

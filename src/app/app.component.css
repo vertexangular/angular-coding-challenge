@@ -1,5 +1,6 @@
 .container {
-  padding: 20px;
+  margin-top: 150px;
+  padding: 20px 0 0 30px;
   height: 100%;
   background: #232222 !important;
 }
