@@ -1,7 +1,5 @@
 div.image_content {
-    width: 100%;
-    height: 90%;
-    display: grid;
+  display: grid;
     align-items: stretch;
     padding-top: 20px;
     padding-bottom: 10px;
@@ -23,6 +21,45 @@ div.image_content {
 }
 .movie-length {
     display: inline;
-    text-align: right;    
+    text-align: right;
     font-size: 15px;
+}
+.col-3:hover img{
+  opacity: 0.2;
+}
+.middle {
+  visibility: hidden;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.col-3:hover .middle {
+  opacity: 1;
+  visibility: visible !important;
+}
+.col-3:hover .top-left{
+  opacity: 1;
+  visibility: visible !important;
+  color: white;
+}
+.col-3:hover .fa-play-circle {
+  color: white;
+}
+.top-left {
+  visibility: hidden;
+  position: absolute;
+  /*top: 12%;*/
+  /*left: 14%;*/
+
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+img {
+  min-height: 296px;
+}
+.mt-6 {
+  margin-top: 3.5em;
 }

@@ -1,21 +1,33 @@
 <div class="row">
-    <div *ngFor="let movie of movies; let i = index" class="col-3 text-center">
-        <div class="image_content">
-            <img src='{{imagePath}}/{{movie.poster_path}}' class="rounded w-100"/>
-        </div>
-        <div class="movie-title">{{movie.title}}</div>
+  <div *ngFor="let movie of movies; let i = index" class="col-3 text-center">
 
+    <div class="top-left mt-6 ml-4">
 
-        <div *ngFor="let details of movieDetails[i];" >
-            <div *ngFor="let genre of details.genre; let j = index;">
-                <div *ngIf="j<2" class=" d-flex text-left float-left text-muted ">{{j!=0 ? ', '+genre :genre}}</div>
-            </div>
-            <div class="d-flex text-right float-right text-muted">{{details.length}} min</div>
-            <div class="d-inline">
-                <star-rating-comp [starType]="'svg'" [rating]="details.rating"></star-rating-comp>
-            </div>
-        </div>
+      <i class="fa fa-heart mb-2" aria-hidden="true"></i>
+      <i class="fa fa-share-square-o d-block mb-1" aria-hidden="true"></i>
+      <i class="fa fa-ellipsis-h d-block " aria-hidden="true"></i>
+    </div>
+    <div class="middle">
+      <div class="text"><i class="fa fa-play-circle fa-4x" aria-hidden="true"></i></div>
+    </div>
+    <div class="image_content">
+      <img src='{{imagePath}}/{{movie.poster_path}}' class="rounded w-100"/>
 
     </div>
+
+    <div class="movie-title">{{movie.title}}</div>
+
+
+    <div *ngFor="let details of movieDetails[i];" class="d-block">
+      <div *ngFor="let genre of details.genre; let j = index;">
+        <div *ngIf="j<2" class=" d-flex text-left float-left text-muted ">{{j!=0 ? ', '+genre :genre}}</div>
+      </div>
+      <div class="d-flex text-right float-right text-muted">{{details.length}} min</div>
+      <div class="d-block">
+        <star-rating-comp [starType]="'svg'" [rating]="details.rating"></star-rating-comp>
+      </div>
+    </div>
+
+  </div>
 
 </div>

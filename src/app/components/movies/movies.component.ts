@@ -24,15 +24,15 @@ export class MoviesComponent implements OnInit {
             })
             .switchMap(data => {
                 return Observable.forkJoin(this.movies.map(movie => {
-                    console.log(movie.id, 'movie...')
+                    console.log(movie.id, 'movie...');
                     this.util.get(`movie/${movie.id}`)
                         .subscribe(data => {
-                            console.log(data, 'data???')
+                            console.log(data, 'data???');
                             this.movieDetails.push([{
                                 "genre": data.genres.map(genre=>genre.name),
                                 "length": data.runtime,
                                 "rating": data.vote_average / 2
-                            }])
+                            }]);
                             console.log(this.movieDetails, 'moviedetilas/')
                             //this.genres.push(data.genres.map(genre => genre.name))
                             //this.lenghts.push(data.runtime);
