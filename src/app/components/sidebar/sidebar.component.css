@@ -1,0 +1,47 @@
+.wrapper {
+    background-color: #29303A;
+    margin: -20px 0 0 -30px;
+    width: 8%;
+    height: 720px;
+}
+.fa {
+    color: white;
+    margin: 15px 0 -5px 0;
+}
+.fa-1x{
+    font-size: 1.5em;
+    font-weight: 100;
+}
+.nav-link {
+    font-size: 13px;
+    color: white;
+}
+.nav-item:hover .fa{
+    color: mediumspringgreen;
+    cursor: pointer;
+
+}
+.nav-item:hover .nav-link{
+    color: mediumspringgreen;
+    cursor: pointer;
+
+}
+.nav-item-picture {
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+}
+.user-picture {
+    margin: 15px 10px;
+    padding: 30px;
+    border: 1px solid grey;
+    border-radius: 15px;
+    background: url(../../../assets/images/rsz_hehehe.png);
+}
+.logout {
+    border-top: 1px solid black;
+    margin-top: 135px;
+
+}
+.logout-icons{
+    color: red;
+}
