@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {UtilService} from "../../services/util.service";
-import {Observable} from "rxjs/Observable";
+import {Observable} from "rxjs";
 
 @Component({
-  selector: 'app-watchlist',
-  templateUrl: './watchlist.component.html',
-  styleUrls: ['./watchlist.component.css']
+  selector: 'app-favorites',
+  templateUrl: './favorites.component.html',
+  styleUrls: ['./favorites.component.css']
 })
-export class WatchlistComponent implements OnInit {
+export class FavoritesComponent implements OnInit {
   imagePath: string = 'http://image.tmdb.org/t/p/w185/';
   movies: Observable<any> = Observable.of([]);
   movieDetails: any[] = [];
@@ -50,5 +50,4 @@ export class WatchlistComponent implements OnInit {
       this.movieDetails = [];
     }
   }
-
 }

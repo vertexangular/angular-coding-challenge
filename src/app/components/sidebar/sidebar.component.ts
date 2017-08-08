@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {UtilService} from "../../services/util.service";
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private utilService: UtilService) {
+  }
 
   ngOnInit() {
   }
 
+  isLoggedIn() {
+    return this.utilService.isLoggedIn();
+  }
+
+  signIn() {
+    this.utilService.setLocalData('');
+    this.isLoggedIn();
+  }
+
+  signOut() {
+    this.utilService.clearLocalData();
+    this.isLoggedIn();
+  }
 }

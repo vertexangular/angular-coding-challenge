@@ -1,40 +1,45 @@
 <ul class="nav flex-column float-left wrapper d-flex">
-    <li class="nav-item nav-item-picture">
-        <div class="user-picture d-flex justify-content-center">
-        </div>
-    </li>
-    <li class="nav-item x">
-        <i class="fa fa-clock-o d-flex justify-content-center fa-1x " aria-hidden="true"></i>
-        <a class="nav-link d-flex justify-content-center" href="#">LATEST</a>
-    </li>
-    <li class="nav-item">
-        <i class="fa fa-star d-flex justify-content-center fa-1x " aria-hidden="true"></i>
+  <li class="nav-item nav-item-picture">
+    <div class="user-picture d-flex justify-content-center" [routerLink]="['/']">
+    </div>
+  </li>
+  <li class="nav-item x">
+    <i class="fa fa-clock-o d-flex justify-content-center fa-1x " aria-hidden="true"></i>
+    <a class="nav-link d-flex justify-content-center" href="#">LATEST</a>
+  </li>
+  <li class="nav-item">
+    <i class="fa fa-star d-flex justify-content-center fa-1x " aria-hidden="true"></i>
 
-        <a class="nav-link d-flex justify-content-center" href="#">POPULAR</a>
-    </li>
-    <li class="nav-item">
-        <i class="fa fa-heart d-flex justify-content-center fa-1x " aria-hidden="true"></i>
+    <a class="nav-link d-flex justify-content-center" href="#">POPULAR</a>
+  </li>
+  <li class="nav-item" *ngIf="isLoggedIn()" [routerLink]="['/favorites']">
+    <i class="fa fa-heart d-flex justify-content-center fa-1x " aria-hidden="true"></i>
 
-        <a class="nav-link d-flex justify-content-center" href="#">FAVORITES</a>
-    </li>
-    <li class="nav-item">
-        <i class="fa fa-list-ul d-flex justify-content-center fa-1x " aria-hidden="true"></i>
+    <a class="nav-link d-flex justify-content-center" [routerLink]="['/favorites']">FAVORITES</a>
+  </li>
+  <li class="nav-item" *ngIf="isLoggedIn()" [routerLink]="['/watchlist']">
+    <i class="fa fa-list-ul d-flex justify-content-center fa-1x " aria-hidden="true"></i>
 
-        <a class="nav-link d-flex justify-content-center" href="#">WATCHLIST</a>
-    </li>
-    <li class="nav-item">
-        <i class="fa fa-search d-flex justify-content-center fa-1x " aria-hidden="true"></i>
+    <a class="nav-link d-flex justify-content-center" [routerLink]="['/watchlist']">WATCHLIST</a>
+  </li>
+  <li class="nav-item">
+    <i class="fa fa-search d-flex justify-content-center fa-1x " aria-hidden="true"></i>
 
-        <a class="nav-link d-flex justify-content-center" href="#">SEARCH</a>
-    </li>
-    <li class="nav-item">
-        <i class="fa fa-th d-flex justify-content-center fa-1x " aria-hidden="true"></i>
+    <a class="nav-link d-flex justify-content-center" href="#">SEARCH</a>
+  </li>
+  <li class="nav-item">
+    <i class="fa fa-th d-flex justify-content-center fa-1x " aria-hidden="true"></i>
 
-        <a class="nav-link d-flex justify-content-center" href="#">GENRES</a>
-    </li>
-    <li class="nav-item logout">
-        <i class="fa fa-power-off d-flex justify-content-center logout-icons fa-1x"  aria-hidden="true"></i>
+    <a class="nav-link d-flex justify-content-center" href="#">GENRES</a>
+  </li>
+  <li class="nav-item logout" *ngIf="isLoggedIn()" (click)="signOut()">
+    <i class="fa fa-power-off d-flex justify-content-center logout-icons fa-1x" aria-hidden="true"></i>
 
-        <a class="nav-link d-flex justify-content-center logout-icons"  href="#">SIGN OUT</a>
-    </li>
+    <a class="nav-link d-flex justify-content-center logout-icons" href="#">SIGN OUT</a>
+  </li>
+  <li class="nav-item logout" *ngIf="!isLoggedIn()" (click)="signIn()">
+    <i class="fa fa-power-off d-flex justify-content-center login-icons fa-1x" aria-hidden="true"></i>
+
+    <a class="nav-link d-flex justify-content-center login-icons" href="#">SIGN IN</a>
+  </li>
 </ul>

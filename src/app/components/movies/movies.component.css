@@ -34,17 +34,15 @@ div.image_content {
     cursor: pointer;
 
 }
-
-.col-3:hover .middle {
-  opacity: 1;
-  visibility: visible !important;
-    cursor: pointer;
-
-}
 .col-3:hover .top-left{
   opacity: 1;
   visibility: visible !important;
   color: white;
+  cursor: pointer;
+}
+.col-3:hover .middle {
+  opacity: 1;
+  visibility: visible !important;
     cursor: pointer;
 
 }

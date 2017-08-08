@@ -9,6 +9,8 @@ import {SidebarComponent} from './components/sidebar/sidebar.component';
 import {WatchlistComponent} from './components/watchlist/watchlist.component';
 import {HttpModule} from '@angular/http';
 import {StarRatingModule} from 'angular-star-rating';
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import {routing} from "./app.routing";
 
 
 @NgModule({
@@ -17,9 +19,11 @@ import {StarRatingModule} from 'angular-star-rating';
         MoviesComponent,
         FilterPipe,
         SidebarComponent,
-        WatchlistComponent
+        WatchlistComponent,
+        FavoritesComponent
     ],
     imports: [
+        routing,
         BrowserModule,
         HttpModule,
         StarRatingModule.forRoot()
