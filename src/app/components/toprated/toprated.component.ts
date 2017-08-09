@@ -7,7 +7,7 @@ import {MoviesService} from "../../services/movies.service";
   styleUrls: ['./toprated.component.css']
 })
 export class TopratedComponent implements OnInit {
-
+    filterKeyword='';
   constructor(public moviesService: MoviesService) { }
 
   ngOnInit() {

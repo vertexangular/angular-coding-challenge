@@ -12,7 +12,8 @@ import {StarRatingModule} from 'angular-star-rating';
 import {FavoritesComponent} from './components/favorites/favorites.component';
 import {routing} from "./app.routing";
 import {MoviesService} from "./services/movies.service";
-import { TopratedComponent } from './components/toprated/toprated.component';
+import {TopratedComponent} from './components/toprated/toprated.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -28,6 +29,7 @@ import { TopratedComponent } from './components/toprated/toprated.component';
         routing,
         BrowserModule,
         HttpModule,
+        FormsModule,
         StarRatingModule.forRoot()
     ],
     providers: [UtilService, MoviesService],
