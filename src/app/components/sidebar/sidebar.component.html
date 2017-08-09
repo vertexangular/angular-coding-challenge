@@ -15,7 +15,7 @@
   <li class="nav-item" *ngIf="isLoggedIn()" [routerLink]="['/favorites']" (click)="moviesService.activeTab='favorites'">
     <i class="fa fa-heart d-flex justify-content-center fa-1x " aria-hidden="true"></i>
 
-    <a class="nav-link d-flex justify-content-center" [routerLink]="['/favorites']" >FAVORITES</a>
+    <a class="nav-link d-flex justify-content-center" >FAVORITES</a>
   </li>
   <li class="nav-item" *ngIf="isLoggedIn()" [routerLink]="['/watchlist']" (click)="moviesService.activeTab='favorites'">
     <i class="fa fa-list-ul d-flex justify-content-center fa-1x " aria-hidden="true"></i>

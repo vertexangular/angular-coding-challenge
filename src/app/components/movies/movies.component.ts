@@ -12,7 +12,7 @@ import {MoviesService} from "../../services/movies.service";
 export class MoviesComponent implements OnInit {
     // imagePath: string = 'http://image.tmdb.org/t/p/w185/';
 
-    @Input() movies;
+    @Input() movies: Movie[];
 
     constructor(private util: UtilService, public moviesService: MoviesService) {
     }
@@ -22,9 +22,9 @@ export class MoviesComponent implements OnInit {
         // this.moviesService.activeTab == 'top-rated'
         //     ? this.movies = this.moviesService.topRatedMovies
         //     : this.movies = this.moviesService.watchlistMovies;
-
     }
 
+    switchArray() {
 
-
+    }
 }

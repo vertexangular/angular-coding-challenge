@@ -24,13 +24,14 @@ export class MoviesService {
                     this.util.get(`movie/${movie.id}`)
                         .subscribe(data => {
 
-                            let theMovie = new Movie();
-                            theMovie.id = movie.id;
-                            theMovie.title = movie.title;
-                            theMovie.posterPath = movie.poster_path;
-                            theMovie.genre = data.genres.map(genre => genre.name);
-                            theMovie.length = data.runtime;
-                            theMovie.rating = data.vote_average / 2;
+                            // let theMovie = new Movie();
+                            // theMovie.id = movie.id;
+                            // theMovie.title = movie.title;
+                            // theMovie.posterPath = movie.poster_path;
+                            // theMovie.genre = data.genres.map(genre => genre.name);
+                            // theMovie.length = data.runtime;
+                            // theMovie.rating = data.vote_average / 2;
+                            let theMovie = new Movie(movie.id, movie.title, movie.poster_path, data.genres.map(genre => genre.name), data.runtime, data.vote_average / 2);
 
                             this.topRatedMovies.push(theMovie);
 
@@ -51,12 +52,18 @@ export class MoviesService {
             : this.watchlistMovies.splice(added, 1);
 
         this.watchlistMovies.forEach(movie => {
-            console.log(movie.title +"watchlist")
+            console.log(movie.title + "watchlist")
         })
+
+        this.util.setLocalData(this.watchlistMovies);
     }
 
     isMovieInWatchlist(index) {
         return this.watchlistMovies.findIndex(i => i.id == this.topRatedMovies[index].id);
     }
 
+    getWatchListMovies() {
+        this.watchlistMovies = this.util.getLocalData();
+        console.log("WATHCLIST FROM LOCAL STORAGE", this.watchlistMovies);
+    }
 }

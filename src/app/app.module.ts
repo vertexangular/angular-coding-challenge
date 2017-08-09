@@ -12,7 +12,7 @@ import {StarRatingModule} from 'angular-star-rating';
 import {FavoritesComponent} from './components/favorites/favorites.component';
 import {routing} from "./app.routing";
 import {MoviesService} from "./services/movies.service";
-
+import { TopratedComponent } from './components/toprated/toprated.component';
 
 @NgModule({
     declarations: [
@@ -21,14 +21,14 @@ import {MoviesService} from "./services/movies.service";
         FilterPipe,
         SidebarComponent,
         WatchlistComponent,
-        FavoritesComponent
+        FavoritesComponent,
+        TopratedComponent
     ],
     imports: [
         routing,
         BrowserModule,
         HttpModule,
         StarRatingModule.forRoot()
-
     ],
     providers: [UtilService, MoviesService],
     bootstrap: [AppComponent]

@@ -14,7 +14,7 @@ export class WatchlistComponent implements OnInit {
     }
 
     ngOnInit() {
-
+        this.moviesService.getWatchListMovies();
     }
 
     getWatchlist() {

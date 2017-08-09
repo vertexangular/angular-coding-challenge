@@ -1,13 +1,12 @@
 <!--<app-sidebar></app-sidebar>-->
 <div class="wrapper">
   <div class="row">
-    <div *ngFor="let movie of moviesService.topRatedMovies; let i = index" class="col-3 text-center">
-
-
+    <!--<div *ngFor="let movie of moviesService.topRatedMovies; let i = index" class="col-3 text-center">-->
+    <div *ngFor="let movie of movies; let i = index" class="col-3 text-center">
       <div class="image_content" >
         <img src='{{util.imagePath}}/{{movie.posterPath}}' class="rounded w-100"/>
         <div id="inline-buttons">
-          <div class="middle" (click)="logClick()">
+          <div class="middle">
             <div class="text"><i class="fa fa-play-circle fa-4x" aria-hidden="true"></i></div>
           </div>
 
