@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Http} from '@angular/http';
+import {MoviesService} from "./services/movies.service";
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,9 @@ import {Http} from '@angular/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  constructor(private http: Http) {
 
+  constructor(private http: Http, private moviesService:MoviesService) {
+        this.moviesService.getTopRated();
   }
+
 }

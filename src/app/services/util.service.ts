@@ -7,6 +7,8 @@ export class UtilService {
 
   apiKey: string = 'api_key=451a5c46225283a9a3e766eee8fa80ac';
   baseUrl: string = 'https://api.themoviedb.org/3';
+  public imagePath: string = 'http://image.tmdb.org/t/p/w185/';
+
   headers;
   localData: any = {};
 

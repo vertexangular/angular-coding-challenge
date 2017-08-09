@@ -7,17 +7,17 @@
     <i class="fa fa-clock-o d-flex justify-content-center fa-1x " aria-hidden="true"></i>
     <a class="nav-link d-flex justify-content-center" href="#">LATEST</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" (click)="moviesService.activeTab='top-rated'">
     <i class="fa fa-star d-flex justify-content-center fa-1x " aria-hidden="true"></i>
 
     <a class="nav-link d-flex justify-content-center" href="#">POPULAR</a>
   </li>
-  <li class="nav-item" *ngIf="isLoggedIn()" [routerLink]="['/favorites']">
+  <li class="nav-item" *ngIf="isLoggedIn()" [routerLink]="['/favorites']" (click)="moviesService.activeTab='favorites'">
     <i class="fa fa-heart d-flex justify-content-center fa-1x " aria-hidden="true"></i>
 
-    <a class="nav-link d-flex justify-content-center" [routerLink]="['/favorites']">FAVORITES</a>
+    <a class="nav-link d-flex justify-content-center" [routerLink]="['/favorites']" >FAVORITES</a>
   </li>
-  <li class="nav-item" *ngIf="isLoggedIn()" [routerLink]="['/watchlist']">
+  <li class="nav-item" *ngIf="isLoggedIn()" [routerLink]="['/watchlist']" (click)="moviesService.activeTab='favorites'">
     <i class="fa fa-list-ul d-flex justify-content-center fa-1x " aria-hidden="true"></i>
 
     <a class="nav-link d-flex justify-content-center" [routerLink]="['/watchlist']">WATCHLIST</a>

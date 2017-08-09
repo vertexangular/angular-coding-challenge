@@ -1,48 +1,30 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 import {UtilService} from '../../services/util.service';
 import {Observable} from 'rxjs';
+import {Movie} from './../../classes/movie';
+import {MoviesService} from "../../services/movies.service";
 
 @Component({
-  selector: 'app-movies',
-  templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.css']
+    selector: 'app-movies',
+    templateUrl: './movies.component.html',
+    styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
-  imagePath: string = 'http://image.tmdb.org/t/p/w185/';
-  movies: Observable<any>;
-  movieDetails: any[] = [];
+    // imagePath: string = 'http://image.tmdb.org/t/p/w185/';
+
+    @Input() movies;
+
+    constructor(private util: UtilService, public moviesService: MoviesService) {
+    }
+
+    ngOnInit() {
+
+        // this.moviesService.activeTab == 'top-rated'
+        //     ? this.movies = this.moviesService.topRatedMovies
+        //     : this.movies = this.moviesService.watchlistMovies;
+
+    }
 
 
-  constructor(private util: UtilService) {
-  }
 
-  ngOnInit() {
-    this.util.get('movie/top_rated')
-      .do(data => {
-        this.movies = data.results;
-        console.log(this.movies, 'movies...');
-      })
-      .switchMap(data => {
-        return Observable.forkJoin(this.movies.map(movie => {
-          console.log(movie.id, 'movie...');
-          this.util.get(`movie/${movie.id}`)
-            .subscribe(data => {
-              console.log(data, 'data???');
-              this.movieDetails.push([{
-                "genre": data.genres.map(genre => genre.name),
-                "length": data.runtime,
-                "rating": data.vote_average / 2
-              }]);
-              console.log(this.movieDetails, 'moviedetilas/');
-            });
-        }));
-      })
-      .subscribe(data => {
-        console.log(data, 'details..?');
-      });
-  }
-
-  logClick() {
-    console.log('HEART IS CLICKED');
-  }
 }
