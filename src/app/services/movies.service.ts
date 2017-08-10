@@ -41,7 +41,10 @@ export class MoviesService {
     }
 
     isMovieInWatchlist(movie) {
-        return this.watchlistMovies.findIndex(i => i.id == movie.id);
+        if (this.watchlistMovies)
+            return this.watchlistMovies.findIndex(i => i.id == movie.id);
+
+        return -1;
     }
 
     getWatchListMovies() {
