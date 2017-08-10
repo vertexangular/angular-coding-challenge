@@ -3,14 +3,15 @@
         <div class="user-picture d-flex justify-content-center" [routerLink]="['/']">
         </div>
     </li>
-    <li class="nav-item x" *ngFor="let tab of tabs"
-        (click)="setActiveTab(tab)"
-        [class.active]="tab.name==activeTab">
-        <i class="fa {{tab.icon}} d-flex justify-content-center fa-1x {{tab.margin}} {{tab.color}} "
+    <ng-template *ngIf=""></ng-template>
+    <li class="nav-item x" *ngFor="let tab of tabs; let i=index"
+        (click)=" i<(tabs.length-1) ? setActiveTab(tab) : isLoggedIn() ? signOut() : signIn()"
+        [class.active]="tab.name == activeTab">
+        <i class="fa {{tab.icon}} d-flex justify-content-center fa-1x {{tab.margin}} {{isLoggedIn() ? tab.color : 'logged-in'}} "
            [routerLink]="['/'+tab.routeTo]"
-           ></i>
+        ></i>
         <a class="nav-link d-flex justify-content-center" href="#"
            [routerLink]="['/'+tab.routeTo]"
-        >{{tab.name}}</a>
+        >{{ i<(tabs.length-1) ? tab.name : isLoggedIn() ? 'SIGN OUT' : 'SIGN IN'}}</a>
     </li>
 </ul>

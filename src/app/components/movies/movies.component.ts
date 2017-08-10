@@ -14,7 +14,7 @@ export class MoviesComponent implements OnInit {
     @Input() movies: Movie[];
     filterKeyword = '';
 
-    constructor(private util: UtilService, public moviesService: MoviesService) {
+    constructor(public util: UtilService, public moviesService: MoviesService) {
     }
 
     ngOnInit() {
