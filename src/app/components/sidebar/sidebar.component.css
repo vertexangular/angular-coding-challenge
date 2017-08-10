@@ -14,18 +14,14 @@
 }
 .nav-link {
     font-size: 13px;
-    color: white;
+    color: white !important;
 }
 .nav-item:hover .fa{
     color: mediumspringgreen;
     cursor: pointer;
 
 }
-.nav-item:hover .nav-link{
-    color: mediumspringgreen;
-    cursor: pointer;
 
-}
 .nav-item-picture {
     border-bottom: 1px solid black;
     margin-bottom: 20px;
@@ -39,9 +35,16 @@
 }
 .logout {
     border-top: 1px solid black;
+    padding-top: 15px;
     margin-top: 135px;
 
 }
-.logout-icons{
+.logout-icon{
     color: red;
+}
+.logged-in{
+    color: white;
+}
+.active {
+    background-color: lightslategray;
 }

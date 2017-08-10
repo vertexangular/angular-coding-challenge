@@ -1,7 +1,7 @@
 div.image_content {
     display: grid;
     align-items: stretch;
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
     height: 20vw;
 }
 .wrapper{
@@ -27,7 +27,7 @@ div.image_content {
 .middle {
   visibility: hidden;
   position: absolute;
-  top: 45%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -64,9 +64,7 @@ div.image_content {
 img {
   min-height: 296px;
 }
-.mt-6 {
-  /*margin-top: 2.5em;*/
-}
+
 .stars {
     margin-left: -5px;
 
